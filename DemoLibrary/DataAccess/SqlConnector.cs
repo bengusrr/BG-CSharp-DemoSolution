@@ -18,37 +18,30 @@ namespace DemoLibrary.DataAccess
         /// <returns></returns>
         public EmployeeModel CreateEmployee(EmployeeModel model)
         {
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("RRHH01")))
-            {
+            
+            using (SqlConnection connection = new SqlConnection(GlobalConfig.CnnString("RRHH01")))
+            {                           
                 try
                 {
-                    SqlCommand Comando = new SqlCommand("HorasExtras.Registro_Entradas_insertar", connection);
-                    Comando.CommandType = CommandType.StoredProcedure;
-                    Comando.Parameters.Add("@firsName", SqlDbType.NVarChar).Value = model.FirstName;
-                    Comando.Parameters.Add("@IdGestor", SqlDbType.Int).Value = Obj.IdGestor;
-                    Comando.Parameters.Add("@NumEmpleado", SqlDbType.Int).Value = Obj.NumEmpleado;
-                    Comando.Parameters.Add("@GFH", SqlDbType.Int).Value = Obj.GFH;
-                    Comando.Parameters.Add("@Fecha", SqlDbType.Date).Value = Obj.Fecha;
-                    Comando.Parameters.Add("@HoraEntrada", SqlDbType.Time).Value = Obj.HoraEntrada;
-                    Comando.Parameters.Add("@HoraSalida", SqlDbType.Time).Value = Obj.HoraSalida;
-                    Comando.Parameters.Add("@EstadoValidacion", SqlDbType.Int).Value = Obj.EstadoValidacion;
-                    Comando.Parameters.Add("@IdTipoHoras", SqlDbType.Int).Value = Obj.IdTipoHoras;
-                    Comando.Parameters.Add("@IdTipoCompensacion", SqlDbType.Int).Value = Obj.IdTipoCompensacion;
-                    Comando.Parameters.Add("@IdTipoTrabajo", SqlDbType.Int).Value = Obj.IdTipoTrabajo;
-                    Comando.Parameters.Add("@DescTrabajos", SqlDbType.NVarChar).Value = Obj.DescTrabajo;
-                    Comando.Parameters.Add("@Activo", SqlDbType.Bit).Value = Obj.Activo;
-                    Comando.Parameters.Add("@EmailEnviado", SqlDbType.Bit).Value = Obj.EmailEnviado;
-                    Comando.Parameters.Add("@WinUser", SqlDbType.NVarChar).Value = Obj.WinUser;
-                    Comando.Parameters.Add("@IdPaqueteHorasWeb", SqlDbType.NVarChar).Value = Obj.IdPaqueteHorasWeb;
+                    var param = new DynamicParameters();
 
+                    //SqlCommand Comando = new SqlCommand("name.storeprocedure", connection);
+                    //Comando.CommandType = CommandType.StoredProcedure;
+                    //Comando.Parameters.Add("@firsName", SqlDbType.NVarChar).Value = model.FirstName;
+                    //Comando.Parameters.Add("@lastName", SqlDbType.NVarChar).Value = model.LastName;
+                    //Comando.Parameters.Add("@emailAddress", SqlDbType.NVarChar).Value = model.EmailAddress;
+                    //Comando.Parameters.Add("@mobilePhone", SqlDbType.NVarChar).Value = model.MobilePhoneNumber;
+                    //Comando.Parameters.Add("@Id", SqlDbType.NVarChar).Value = 0;
 
-                    conn_Rh.Open();
-                    Comando.ExecuteNonQuery();
-                    conn_Rh.Close();
+                    //connection.Open();
+                    //Comando.ExecuteNonQuery();
+                    //connection.Close();
+
+                    return model;
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    //MessageBox.Show(ex.Message);
                     throw ex;
                 }
             }
