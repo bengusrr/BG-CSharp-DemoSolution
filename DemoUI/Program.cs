@@ -16,6 +16,10 @@ namespace DemoUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            // Initialize the database connection
+            DemoLibrary.GlobalConfig.InitializeSQLConnection();
+
             Application.Run(new EmployedEntryUI());
         }
     }
