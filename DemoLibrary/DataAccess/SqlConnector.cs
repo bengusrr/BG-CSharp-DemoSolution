@@ -1,4 +1,6 @@
-﻿using DemoLibrary.Models;
+﻿
+using Dapper;
+using DemoLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -23,7 +25,17 @@ namespace DemoLibrary.DataAccess
             {                           
                 try
                 {
+                    // using Dapper extension
                     var param = new DynamicParameters();
+                    param.Add("@firstName", model.FirstName);
+                    param.Add("@lastName", model.LastName);
+                    param.Add("@emailAddress", model.EmailAddress);
+                    param.Add("@mobilePhone", model.MobilePhoneNumber);
+                    param.Add("Id", 0, DbType.Int32, direction: ParameterDirection.Output);
+
+                    connection.Execute("name.storeprocedure", param, commandType: CommandType.StoredProcedure);
+
+                    model.Id = param.Get<int>("@id");
 
                     //SqlCommand Comando = new SqlCommand("name.storeprocedure", connection);
                     //Comando.CommandType = CommandType.StoredProcedure;
