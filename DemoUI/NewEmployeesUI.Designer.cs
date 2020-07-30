@@ -38,6 +38,7 @@
             this.mobilePhoneValue = new System.Windows.Forms.TextBox();
             this.mobilePhoneLabel = new System.Windows.Forms.Label();
             this.createEmployeeButton = new System.Windows.Forms.Button();
+            this.IdLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // titleLabel
@@ -143,12 +144,24 @@
             this.createEmployeeButton.UseVisualStyleBackColor = true;
             this.createEmployeeButton.Click += new System.EventHandler(this.createEmployeeButton_Click);
             // 
+            // IdLabel
+            // 
+            this.IdLabel.AutoSize = true;
+            this.IdLabel.Font = new System.Drawing.Font("Segoe UI Light", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IdLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.IdLabel.Location = new System.Drawing.Point(362, 25);
+            this.IdLabel.Name = "IdLabel";
+            this.IdLabel.Size = new System.Drawing.Size(41, 50);
+            this.IdLabel.TabIndex = 10;
+            this.IdLabel.Text = "0";
+            // 
             // EmployedEntryUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(635, 499);
+            this.Controls.Add(this.IdLabel);
             this.Controls.Add(this.createEmployeeButton);
             this.Controls.Add(this.mobilePhoneLabel);
             this.Controls.Add(this.mobilePhoneValue);
@@ -181,6 +194,7 @@
         private System.Windows.Forms.TextBox mobilePhoneValue;
         private System.Windows.Forms.Label mobilePhoneLabel;
         private System.Windows.Forms.Button createEmployeeButton;
+        private System.Windows.Forms.Label IdLabel;
     }
 }
 

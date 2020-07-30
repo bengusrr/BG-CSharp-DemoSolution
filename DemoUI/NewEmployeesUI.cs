@@ -31,6 +31,8 @@ namespace DemoUI
 
                 GlobalConfig.Connections.CreateEmployee(model);
 
+                IdLabel.Text = model.Id.ToString();
+
                 firstNameValue.Text = "";
                 lastNameValue.Text = "";
                 emailValue.Text = "";

@@ -31,9 +31,9 @@ namespace DemoLibrary.DataAccess
                     param.Add("@lastName", model.LastName);
                     param.Add("@emailAddress", model.EmailAddress);
                     param.Add("@mobilePhone", model.MobilePhoneNumber);
-                    param.Add("Id", 0, DbType.Int32, direction: ParameterDirection.Output);
+                    param.Add("@id", 0, DbType.Int32, direction: ParameterDirection.Output);
 
-                    connection.Execute("name.storeprocedure", param, commandType: CommandType.StoredProcedure);
+                    connection.Execute("test_spEmployees_Insert", param, commandType: CommandType.StoredProcedure);
 
                     model.Id = param.Get<int>("@id");
 
