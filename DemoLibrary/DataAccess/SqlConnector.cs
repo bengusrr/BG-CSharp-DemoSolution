@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace DemoLibrary.DataAccess
 {
@@ -53,7 +54,7 @@ namespace DemoLibrary.DataAccess
                 }
                 catch (Exception ex)
                 {
-                    //MessageBox.Show(ex.Message);
+                    MessageBox.Show(ex.Message);
                     throw ex;
                 }
             }

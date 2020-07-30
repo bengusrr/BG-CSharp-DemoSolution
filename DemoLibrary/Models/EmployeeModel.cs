@@ -51,9 +51,9 @@ namespace DemoLibrary.Models
             MobilePhoneNumber = mobilePhone;
 
             #region "number values example"
-            //int numberValue = 0;
-            //int.TryParse(numberValue, out numberValue);
-            //NumberValue = numberValue;
+            //int numberValueNew = 0;
+            //int.TryParse(numberValue, out numberValueNew);
+            //NumberValue = numberValueNew;
             #endregion
 
         }
