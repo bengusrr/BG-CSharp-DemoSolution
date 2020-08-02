@@ -1,9 +1,9 @@
 # BG-CSharp-DemoSolution
-Tim Corey learning and exercises
+Tim Corey learning and exercises.
 
-Youtube link: https://www.youtube.com/watch?v=5oHfcyrlHeE&list=PLLWMQd6PeGY3t63w-8MMIjIyYS7MsFcCi&index=10
+Youtube link: https://youtu.be/5oHfcyrlHeE
 
-Pasos:
+Descripción del ejercicio:
 ### 1- Crearemos la clase que contendrá uno de los modelo de datos que usará la APP:
 
 ```
